@@ -1,4 +1,4 @@
-namespace dotnet_worker.Models
+namespace app.Common.Models
 {
     public class MessageModel
     {

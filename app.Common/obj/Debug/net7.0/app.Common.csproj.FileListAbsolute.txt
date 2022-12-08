@@ -1,0 +1,12 @@
+C:\GIT\dotnet-worker\app.Common\bin\Debug\net7.0\app.Common.deps.json
+C:\GIT\dotnet-worker\app.Common\bin\Debug\net7.0\app.Common.dll
+C:\GIT\dotnet-worker\app.Common\bin\Debug\net7.0\app.Common.pdb
+C:\GIT\dotnet-worker\app.Common\obj\Debug\net7.0\app.Common.csproj.AssemblyReference.cache
+C:\GIT\dotnet-worker\app.Common\obj\Debug\net7.0\app.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\GIT\dotnet-worker\app.Common\obj\Debug\net7.0\app.Common.AssemblyInfoInputs.cache
+C:\GIT\dotnet-worker\app.Common\obj\Debug\net7.0\app.Common.AssemblyInfo.cs
+C:\GIT\dotnet-worker\app.Common\obj\Debug\net7.0\app.Common.csproj.CoreCompileInputs.cache
+C:\GIT\dotnet-worker\app.Common\obj\Debug\net7.0\app.Common.dll
+C:\GIT\dotnet-worker\app.Common\obj\Debug\net7.0\refint\app.Common.dll
+C:\GIT\dotnet-worker\app.Common\obj\Debug\net7.0\app.Common.pdb
+C:\GIT\dotnet-worker\app.Common\obj\Debug\net7.0\ref\app.Common.dll

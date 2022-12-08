@@ -1,29 +1,35 @@
-using dotnet_worker;
-using dotnet_worker.Interfaces;
-using dotnet_worker.Repository;
+using app.Common.Interfaces;
+using dotnet_worker.Extensions;
+using dotnet_worker.Services;
 using dotnet_worker.Workers;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddScoped<IMessageRepository, MessageRepository>();
+var config = builder.Configuration;
 
-builder.Services.AddDbContext<MyAppContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DatabaseConnection"))
-);
+//Register Dependences
+builder.Services.RegisterCustomDependences(config);
+builder.Services.RegisterCustomOptions(config);
+builder.Services.RegisterRabbitMqConnection(config);
 
-builder.Services.AddHostedService<MessageWorker>();
+
+// builder.Services.AddHostedService<MessageWorker>();
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
 
+var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var bus = app.Services.GetService<IBusConnection>();
+ConsumerEventBus.Listener(bus);
+
 
 app.UseHttpsRedirection();
 app.UseRouting();

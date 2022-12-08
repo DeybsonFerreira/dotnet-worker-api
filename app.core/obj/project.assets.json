@@ -1699,6 +1699,19 @@
             "rid": "win"
           }
         }
+      },
+      "app.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "RabbitMQ.Client": "6.4.0"
+        },
+        "compile": {
+          "bin/placeholder/app.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/app.Common.dll": {}
+        }
       }
     }
   },
@@ -4929,6 +4942,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "app.Common/1.0.0": {
+      "type": "project",
+      "path": "../app.Common/app.Common.csproj",
+      "msbuildProject": "../app.Common/app.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4940,8 +4958,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.Hosting >= 7.0.0",
-      "RabbitMQ.Client >= 6.4.0",
-      "Swashbuckle.AspNetCore >= 6.4.0"
+      "Swashbuckle.AspNetCore >= 6.4.0",
+      "app.Common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4970,7 +4988,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\GIT\\dotnet-worker\\app.Common\\app.Common.csproj": {
+              "projectPath": "C:\\GIT\\dotnet-worker\\app.Common\\app.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -5014,10 +5036,6 @@
           "Microsoft.Extensions.Hosting": {
             "target": "Package",
             "version": "[7.0.0, )"
-          },
-          "RabbitMQ.Client": {
-            "target": "Package",
-            "version": "[6.4.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
