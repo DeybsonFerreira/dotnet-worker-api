@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1T02zKawewip5ok588LktPgqEVCiEqfQmBhlNMhBeNlaLXrUuZbURWdGK0YdDPsnD6MDNxdSKzn4SFusDlxviQ==",
+  "dgSpecHash": "UKWVGH1NGooiHEgQUMg5h5Ii/pROYUiao1TzWfBLCmDo4gaQeCKJrO1TyFHLIn1HvEx9L3eOAIVVt3RPhFE4qQ==",
   "success": true,
-  "projectFilePath": "c:\\GIT\\dotnet-worker\\dotnet-worker.csproj",
+  "projectFilePath": "C:\\GIT\\dotnet-worker\\dotnet-worker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -63,6 +63,7 @@
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\deybson.ferreira\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
@@ -94,6 +95,7 @@
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\deybson.ferreira\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"

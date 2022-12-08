@@ -74,3 +74,4 @@ C:\GIT\dotnet-worker\obj\Debug\net7.0\refint\dotnet-worker.dll
 C:\GIT\dotnet-worker\obj\Debug\net7.0\dotnet-worker.pdb
 C:\GIT\dotnet-worker\obj\Debug\net7.0\dotnet-worker.genruntimeconfig.cache
 C:\GIT\dotnet-worker\obj\Debug\net7.0\ref\dotnet-worker.dll
+C:\GIT\dotnet-worker\bin\Debug\net7.0\RabbitMQ.Client.dll

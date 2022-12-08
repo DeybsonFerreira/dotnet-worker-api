@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\GIT\\dotnet-worker\\dotnet-worker.csproj": {}
+    "C:\\GIT\\dotnet-worker\\dotnet-worker.csproj": {}
   },
   "projects": {
-    "c:\\GIT\\dotnet-worker\\dotnet-worker.csproj": {
+    "C:\\GIT\\dotnet-worker\\dotnet-worker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\GIT\\dotnet-worker\\dotnet-worker.csproj",
+        "projectUniqueName": "C:\\GIT\\dotnet-worker\\dotnet-worker.csproj",
         "projectName": "dotnet-worker",
-        "projectPath": "c:\\GIT\\dotnet-worker\\dotnet-worker.csproj",
+        "projectPath": "C:\\GIT\\dotnet-worker\\dotnet-worker.csproj",
         "packagesPath": "C:\\Users\\deybson.ferreira\\.nuget\\packages\\",
-        "outputPath": "c:\\GIT\\dotnet-worker\\obj\\",
+        "outputPath": "C:\\GIT\\dotnet-worker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deybson.ferreira\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -71,6 +71,10 @@
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.4.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

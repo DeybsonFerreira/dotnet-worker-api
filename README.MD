@@ -22,6 +22,8 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 7.0.0
 dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.0
 dotnet add package Microsoft.EntityFrameworkCore.Tools --version 7.0.0
 dotnet add package Microsoft.Extensions.Configuration --version 7.0.0
+
+dotnet add package RabbitMQ.Client --version 6.4.0
 # Scaffold
 
 dotnet ef dbcontext scaffold "Data Source=(localdb)\localhost;Initial Catalog=MyApp" Microsoft.EntityFrameworkCore.SqlServer
