@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UKWVGH1NGooiHEgQUMg5h5Ii/pROYUiao1TzWfBLCmDo4gaQeCKJrO1TyFHLIn1HvEx9L3eOAIVVt3RPhFE4qQ==",
+  "dgSpecHash": "dsgolVrpQK7xJ+yX4B3Hw6lM++dEZN93udFR70tGUQQsmhRvE8BEYziQVdooBAtkt+pihWwy9+LV/PBdHK+RZQ==",
   "success": true,
-  "projectFilePath": "C:\\GIT\\dotnet-worker\\dotnet-worker.csproj",
+  "projectFilePath": "C:\\GIT\\dotnet-worker\\app.core\\dotnet-worker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GIT\\dotnet-worker\\dotnet-worker.csproj": {}
+    "C:\\GIT\\dotnet-worker\\app.core\\dotnet-worker.csproj": {}
   },
   "projects": {
-    "C:\\GIT\\dotnet-worker\\dotnet-worker.csproj": {
+    "C:\\GIT\\dotnet-worker\\app.core\\dotnet-worker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GIT\\dotnet-worker\\dotnet-worker.csproj",
+        "projectUniqueName": "C:\\GIT\\dotnet-worker\\app.core\\dotnet-worker.csproj",
         "projectName": "dotnet-worker",
-        "projectPath": "C:\\GIT\\dotnet-worker\\dotnet-worker.csproj",
+        "projectPath": "C:\\GIT\\dotnet-worker\\app.core\\dotnet-worker.csproj",
         "packagesPath": "C:\\Users\\deybson.ferreira\\.nuget\\packages\\",
-        "outputPath": "C:\\GIT\\dotnet-worker\\obj\\",
+        "outputPath": "C:\\GIT\\dotnet-worker\\app.core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deybson.ferreira\\AppData\\Roaming\\NuGet\\NuGet.Config",
