@@ -10,6 +10,7 @@ builder.Services.RegisterCustomOptions(config);
 builder.Services.RegisterRabbitMqConnection(config);
 
 builder.Services.AddHostedService<QueueConsumerService>();
+builder.Services.AddHostedService<MessageWorkerService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -20,7 +21,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "RabbitMQ");
+        c.InjectStylesheet("/swagger/custom.css");
+        c.RoutePrefix = String.Empty;
+    });
 }
 
 app.UseHttpsRedirection();
@@ -30,5 +36,11 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+app.UseSwaggerUI(c =>
+     {
+         c.SwaggerEndpoint("/swagger/v1/swagger.json", "RabbitMQ");
+         c.InjectStylesheet("/swagger/custom.css");
+         c.RoutePrefix = String.Empty;
+     });
 
+app.Run();

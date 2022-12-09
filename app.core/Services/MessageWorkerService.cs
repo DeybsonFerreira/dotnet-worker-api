@@ -1,13 +1,13 @@
 using dotnet_worker.Interfaces;
 
-namespace dotnet_worker.Workers
+namespace dotnet_worker.Services
 {
-    public class MessageWorker : BackgroundService
+    public class MessageWorkerService : BackgroundService
     {
-        private readonly ILogger<MessageWorker> _logger;
+        private readonly ILogger<MessageWorkerService> _logger;
         private IMessageRepository _messageRepository;
 
-        public MessageWorker(ILogger<MessageWorker> logger, IServiceProvider serviceProvider)
+        public MessageWorkerService(ILogger<MessageWorkerService> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
             IServiceScope scope = serviceProvider.CreateScope();

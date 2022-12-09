@@ -13,6 +13,7 @@ namespace dotnet_worker.Extensions
         {
             service.AddScoped<IMessageRepository, MessageRepository>();
             service.AddScoped<IQueuePublisherService, QueuePublisherService>();
+            service.AddScoped<IQueueConsumerService, QueueConsumerService>();
             service.AddTransient<IBusConnection, RabbitMqConnection>();
             RegisterDbContext(service, config);
             return service;
