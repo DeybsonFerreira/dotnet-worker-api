@@ -12,6 +12,14 @@ namespace dotnet_worker.Repository
             _context = context;
         }
 
+        public async Task SaveAsync(Messages message)
+        {
+            await _context.AddAsync(message);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<long> Size() => await _context.Messages.LongCountAsync();
+
         public async Task<List<Messages>> GetNotReads()
         {
             return await _context.Messages.Where(x => !x.Read).ToListAsync();

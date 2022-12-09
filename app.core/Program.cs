@@ -1,28 +1,32 @@
-using dotnet_worker;
-using dotnet_worker.Interfaces;
-using dotnet_worker.Repository;
-using dotnet_worker.Workers;
-using Microsoft.EntityFrameworkCore;
+using dotnet_worker.Extensions;
+using dotnet_worker.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddScoped<IMessageRepository, MessageRepository>();
+var config = builder.Configuration;
 
-builder.Services.AddDbContext<MyAppContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DatabaseConnection"))
-);
+//Register Dependences
+builder.Services.RegisterCustomDependences(config);
+builder.Services.RegisterCustomOptions(config);
+builder.Services.RegisterRabbitMqConnection(config);
 
-builder.Services.AddHostedService<MessageWorker>();
+builder.Services.AddHostedService<QueueConsumerService>();
+builder.Services.AddHostedService<MessageWorkerService>();
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "RabbitMQ");
+        c.InjectStylesheet("/swagger/custom.css");
+        c.RoutePrefix = String.Empty;
+    });
 }
 
 app.UseHttpsRedirection();
@@ -32,5 +36,11 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+app.UseSwaggerUI(c =>
+     {
+         c.SwaggerEndpoint("/swagger/v1/swagger.json", "RabbitMQ");
+         c.InjectStylesheet("/swagger/custom.css");
+         c.RoutePrefix = String.Empty;
+     });
 
+app.Run();
