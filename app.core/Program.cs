@@ -12,7 +12,7 @@ builder.Services.RegisterCustomOptions(config);
 builder.Services.RegisterRabbitMqConnection(config);
 
 
-// builder.Services.AddHostedService<MessageWorker>();
+builder.Services.AddHostedService<MessageWorker>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

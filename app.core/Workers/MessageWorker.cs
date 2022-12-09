@@ -16,7 +16,6 @@ namespace dotnet_worker.Workers
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-
             while (!stoppingToken.IsCancellationRequested)
             {
                 // List<Messages> list = await _messageRepository.GetNotReads();
