@@ -6,14 +6,16 @@ namespace dotnet_worker.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[ApiConventionType(typeof(DefaultApiConventions))]
+
 public class RabbitMqController : ControllerBase
 {
     private readonly ILogger<RabbitMqController> _logger;
-    private readonly IEventBusService _event;
+    private readonly IQueuePublisherService _event;
 
     public RabbitMqController(
         ILogger<RabbitMqController> logger,
-        IEventBusService eventBus
+        IQueuePublisherService eventBus
         )
     {
         _logger = logger;
@@ -21,9 +23,12 @@ public class RabbitMqController : ControllerBase
     }
 
     [HttpPost()]
-    public void Send()
+    public IActionResult Send(MessageModel message)
     {
-        MessageModel message = new MessageModel(0, "Mensagem de teste");
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
         _event.SendMessage(message);
+        return Ok();
     }
 }

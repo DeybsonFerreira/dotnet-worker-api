@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace dotnet_worker.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+// [Route("api/[controller]")] //disabled
 public class MessagesController : ControllerBase
 {
     private readonly ILogger<MessagesController> _logger;

@@ -1,4 +1,4 @@
-using app.Common.Models.Options;
+using app.Common.Models;
 
 namespace dotnet_worker.Extensions
 {

@@ -12,7 +12,7 @@ namespace dotnet_worker.Extensions
         public static IServiceCollection RegisterCustomDependences(this IServiceCollection service, IConfiguration config)
         {
             service.AddScoped<IMessageRepository, MessageRepository>();
-            service.AddScoped<IEventBusService, EventBusService>();
+            service.AddScoped<IQueuePublisherService, QueuePublisherService>();
             service.AddTransient<IBusConnection, RabbitMqConnection>();
             RegisterDbContext(service, config);
             return service;

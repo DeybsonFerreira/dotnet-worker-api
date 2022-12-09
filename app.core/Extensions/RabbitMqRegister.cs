@@ -1,4 +1,4 @@
-using app.Common.Models.Options;
+using app.Common.Models;
 using RabbitMQ.Client;
 
 namespace dotnet_worker.Extensions

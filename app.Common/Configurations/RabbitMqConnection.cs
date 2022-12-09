@@ -1,5 +1,5 @@
 using app.Common.Interfaces;
-using app.Common.Models.Options;
+using app.Common.Models;
 using RabbitMQ.Client;
 
 namespace app.Common.Configurations
@@ -15,43 +15,39 @@ namespace app.Common.Configurations
         public RabbitMqConnection(IConnectionFactory connectionFactory, RabbitMqOptions options)
         {
             _options = options;
-            Connection = connectionFactory.CreateConnection();
-            IsConnected = Connection.IsOpen;
-            Channel = CreateChannel();
+            Channel = ConnectChannel();
         }
-
-        public IModel GetChannel() => Channel;
-
-        public IModel CreateChannel()
+        public IModel ConnectChannel()
         {
             TryConnect();
 
             if (!IsConnected || Connection == null)
                 throw new InvalidOperationException("No RabbitMQ connections are available to perform this action");
 
-            return Connection.CreateModel();
+            return Channel;
         }
 
         public void TryConnect()
         {
             lock (semaphore)
             {
-                if (IsConnected)
-                    return;
-
-                var factory = new ConnectionFactory()
+                if (Connection is null || !Connection.IsOpen)
                 {
-                    HostName = _options.HostName,
-                    UserName = _options.UserName,
-                    Password = _options.Password,
-                    Port = AmqpTcpEndpoint.UseDefaultPort
-                };
+                    var factory = new ConnectionFactory()
+                    {
+                        HostName = _options.HostName,
+                        UserName = _options.UserName,
+                        Password = _options.Password,
+                        Port = AmqpTcpEndpoint.UseDefaultPort
+                    };
 
-                Connection = factory.CreateConnection();
-                Connection.ConnectionShutdown += (s, e) => TryConnect();
-                Connection.CallbackException += (s, e) => TryConnect();
-                Connection.ConnectionBlocked += (s, e) => TryConnect();
-                IsConnected = Connection.IsOpen;
+                    Connection = factory.CreateConnection();
+                    Channel = Connection.CreateModel();
+                    Connection.ConnectionShutdown += (s, e) => TryConnect();
+                    Connection.CallbackException += (s, e) => TryConnect();
+                    Connection.ConnectionBlocked += (s, e) => TryConnect();
+                    IsConnected = Connection.IsOpen;
+                }
             }
         }
 
@@ -63,7 +59,7 @@ namespace app.Common.Configurations
         }
         private void CloseConnection()
         {
-            if (Connection is not null && !Connection.IsOpen)
+            if (Connection is not null)
                 Connection.Close();
         }
 

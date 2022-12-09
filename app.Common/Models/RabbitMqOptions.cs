@@ -1,4 +1,4 @@
-namespace app.Common.Models.Options
+namespace app.Common.Models
 {
     public class RabbitMqOptions 
     {
