@@ -28,7 +28,7 @@ namespace dotnet_worker.Services
             var prop = channel.CreateBasicProperties();
 
             channel.BasicPublish(
-                "",
+                exchange: "",
                 routingKey: QueueNames.Messages,
                 basicProperties: prop,
                 body: body

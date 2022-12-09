@@ -16,7 +16,14 @@ namespace app.Common.Configurations
         {
             _options = options;
             Channel = ConnectChannel();
+            CreateExchange();
         }
+
+        private void CreateExchange()
+        {
+            Channel.ExchangeDeclare(exchange: _options.Exchange, type: ExchangeType.Fanout);
+        }
+
         public IModel ConnectChannel()
         {
             TryConnect();
