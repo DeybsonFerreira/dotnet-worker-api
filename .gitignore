@@ -9,10 +9,15 @@ project.lock.json
 # Visual Studio Code
 .vscode
 
+# file build generated
+.dll
+.pdb
+.cache
+.exe
+
 # User-specific files
 *.suo
 *.user
-*.dll
 *.userosscache
 *.sln.docstates
 
