@@ -77,3 +77,4 @@ C:\GIT\dotnet-worker\app.core\obj\Debug\net7.0\dotnet-worker.genruntimeconfig.ca
 C:\GIT\dotnet-worker\app.core\obj\Debug\net7.0\ref\dotnet-worker.dll
 C:\GIT\dotnet-worker\app.core\bin\Debug\net7.0\app.Common.dll
 C:\GIT\dotnet-worker\app.core\bin\Debug\net7.0\app.Common.pdb
+C:\GIT\dotnet-worker\app.core\bin\Debug\net7.0\Newtonsoft.Json.dll

@@ -18,12 +18,10 @@ namespace dotnet_worker.Services
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                // List<Messages> list = await _messageRepository.GetNotReads();
+                var qtd = await _messageRepository.Size();
+                _logger.LogInformation($"Total de {qtd} Mensagens cadastradas");
 
-                // foreach (var item in list)
-                //     _logger.LogInformation($"LOG :: {item.Id} - {item.Text}");
-
-                await Task.Delay(1000, stoppingToken);
+                await Task.Delay(5000, stoppingToken);
             }
         }
     }

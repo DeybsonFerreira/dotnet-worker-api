@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eLhBDtCTexMNhGhfIkgtNVktChkTcKDhOQf3UxlZVP/kVBqWu83s4a3S3VMcSxhD/ovUblALvqjwk2BeBm9hfQ==",
+  "dgSpecHash": "kHMxNjMjmTsR+bPLmhVcP45TaNd22P4N4EDq4ZXcpKxEbhwPrPDXwIN51j43tFi5iCnhBZWfVDKL+nRDf8+R4g==",
   "success": true,
   "projectFilePath": "C:\\GIT\\dotnet-worker\\app.core\\dotnet-worker.csproj",
   "expectedPackageFiles": [
@@ -63,6 +63,7 @@
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\deybson.ferreira\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\deybson.ferreira\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",

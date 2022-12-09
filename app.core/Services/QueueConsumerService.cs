@@ -1,7 +1,9 @@
 using System.Text;
 using app.Common.Interfaces;
+using dotnet_worker.Data;
 using dotnet_worker.Interfaces;
 using dotnet_worker.Utils;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
@@ -10,10 +12,13 @@ namespace dotnet_worker.Services
     public class QueueConsumerService : BackgroundService, IQueueConsumerService
     {
         private IBusConnection _bus;
+        private IMessageRepository _messageRepository;
 
-        public QueueConsumerService(IBusConnection bus)
+        public QueueConsumerService(IBusConnection bus, IServiceProvider serviceProvider)
         {
             _bus = bus ?? throw new ArgumentNullException(nameof(bus));
+            IServiceScope scope = serviceProvider.CreateScope();
+            _messageRepository = scope.ServiceProvider.GetRequiredService<IMessageRepository>();
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -39,7 +44,7 @@ namespace dotnet_worker.Services
 
 
             var consumer = new EventingBasicConsumer(_channel);
-            consumer.Received += (object sender, BasicDeliverEventArgs eventArgs) =>
+            consumer.Received += async (object sender, BasicDeliverEventArgs eventArgs) =>
                     {
                         var body = eventArgs.Body.ToArray();
                         var message = Encoding.UTF8.GetString(body);
@@ -47,6 +52,8 @@ namespace dotnet_worker.Services
 
                         try
                         {
+                            var modelToSave = JsonConvert.DeserializeObject<Messages>(message);
+                            await _messageRepository.SaveAsync(modelToSave);
                             _channel.BasicAck(eventArgs.DeliveryTag, false);
                         }
                         catch
