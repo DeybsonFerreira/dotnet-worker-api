@@ -1,19 +1,5 @@
-# DOTNET WORKER
+# DOTNET WORKER - WITH RABBIT MQ - Scaffold SQL
 
-## Comando
-
-- dotnet new worker
-
-```
-CREATE TABLE Messages (
-    [Id]  INT NOT NULL IDENTITY PRIMARY KEY,
-	[Text] varchar(300),
-    [Read] bit
-);
-
-
-
-```
 
 # Packages
 
@@ -36,3 +22,13 @@ dotnet add package Newtonsoft.Json --version 13.0.2
 dotnet ef dbcontext scaffold "Data Source=(localdb)\localhost;Initial Catalog=MyApp" Microsoft.EntityFrameworkCore.SqlServer
 
 Scaffold-DbContext "Data Source=(localdb)\localhost;Initial Catalog=MyApp" Microsoft.EntityFrameworkCore.SqlServer
+
+
+
+```
+CREATE TABLE Messages (
+    [Id]  INT NOT NULL IDENTITY PRIMARY KEY,
+	[Text] varchar(300),
+    [Read] bit
+);
+```
